@@ -46,6 +46,15 @@ export default function Login() {
         required
       />
       <Button type="submit">Login</Button>
+
+      <Button
+        variant="outline"
+        onClick={() => {
+          signIn("github");
+        }}
+      >
+        Login with Github
+      </Button>
     </form>
   );
 }

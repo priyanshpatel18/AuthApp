@@ -1,6 +1,7 @@
 import axios from "axios";
-import Credentials from "next-auth/providers/credentials";
 import { sign, verify } from "jsonwebtoken";
+import Credentials from "next-auth/providers/credentials";
+import Github from "next-auth/providers/github";
 
 export function generateJWT(payload: any) {
   const SECRET_KEY = process.env.SECRET_KEY || "";
@@ -64,6 +65,10 @@ const authOptions = {
 
         return null;
       },
+    }),
+    Github({
+      clientId: process.env.GITHUB_ID || "",
+      clientSecret: process.env.GITHUB_SECRET || "",
     }),
   ],
   secret: process.env.SECRET_KEY || "SeCr3T",
