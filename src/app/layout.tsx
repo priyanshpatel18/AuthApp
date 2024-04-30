@@ -1,7 +1,8 @@
-import siteConfig from "@/config/siteConfig";
-import "./globals.css";
 import { Providers } from "@/Providers/Providers";
 import { Appbar } from "@/components/Appbar";
+import Toaster from "@/components/ui/sonner";
+import siteConfig from "@/config/siteConfig";
+import "./globals.css";
 
 export const metadata = siteConfig;
 
@@ -16,6 +17,7 @@ export default function RootLayout({
         <Providers>
           <Appbar />
           <div>{children}</div>
+          <Toaster />
         </Providers>
       </body>
     </html>

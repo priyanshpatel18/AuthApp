@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { SunDimIcon, SunMoonIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { toast } from "sonner";
 
 export const ThemeToggler = () => {
   const { setTheme } = useTheme();
@@ -16,7 +17,7 @@ export const ThemeToggler = () => {
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="outline-none">
+        <Button variant="outline" size="icon" className="">
           <SunDimIcon className="h-[1rem] w-[1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <SunMoonIcon className="absolute h-[1rem] w-[1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle Theme</span>
