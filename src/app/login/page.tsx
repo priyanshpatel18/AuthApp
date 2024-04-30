@@ -55,6 +55,15 @@ export default function Login() {
       >
         Login with Github
       </Button>
+
+      <Button
+        variant="outline"
+        onClick={() => {
+          signIn("google");
+        }}
+      >
+        Login with Google
+      </Button>
     </form>
   );
 }
