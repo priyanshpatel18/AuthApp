@@ -1,9 +1,9 @@
 "use client";
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React from "react";
 import { toast } from "sonner";
 
 export default function ForgotPassword() {
