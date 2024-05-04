@@ -37,7 +37,6 @@ export async function POST(request: NextRequest) {
         message: "User does not exist",
       });
     }
-    console.log("User Exist");
 
     // Compare Password
     const passwordMatch = await compare(password, userExists.password);
@@ -47,13 +46,11 @@ export async function POST(request: NextRequest) {
         message: "Incorrect Password",
       });
     }
-    console.log("Password");
 
     const userObject = {
       id: userExists.id,
       email: userExists.email,
     };
-    console.log(userObject);
 
     // Send Response
     return NextResponse.json({

@@ -50,6 +50,14 @@ export async function POST(request: NextRequest) {
       message: "Failed to create account",
     });
   }
+  await prisma.otp.update({
+    where: {
+      email: newUser.email,
+    },
+    data: {
+      verified: true,
+    },
+  });
   cookies().delete("otpToken");
 
   return NextResponse.json({

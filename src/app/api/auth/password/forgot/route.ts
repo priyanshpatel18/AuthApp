@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     },
   });
   if (!userExists) {
-    return NextResponse.json({ status: 400, messsage: "User not found" });
+    return NextResponse.json({ status: 400, message: "User not found" });
   }
 
   const otp = otpGenerator.generate(6, {
